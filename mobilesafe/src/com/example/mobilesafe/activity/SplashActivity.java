@@ -102,7 +102,7 @@ public class SplashActivity extends Activity {
 
 			public  void run(){
 				try {
-					URL url = new URL("http://10.0.2.2:8080/update74.json");
+					URL url = new URL("http://192.168.1.6:8080/json.json");
 					HttpURLConnection connection = (HttpURLConnection)url.openConnection();
 					connection.setConnectTimeout(2000);
 					connection.setReadTimeout(2000);
