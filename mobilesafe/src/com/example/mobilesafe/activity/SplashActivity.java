@@ -14,17 +14,25 @@ import com.example.mobilesafe.R.id;
 import com.example.mobilesafe.R.layout;
 import com.example.mobilesafe.R.menu;
 import com.example.mobilesafe.utils.StreamUtil;
+import com.example.mobilesafe.utils.ToastUtil;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * @author Administrator
@@ -37,6 +45,8 @@ import android.widget.TextView;
 public class SplashActivity extends Activity {
 
 	protected static final String tag = "SplashActivity";
+	protected static final int OPEN_WINDOWS = 0;
+	protected static final int ENTRY_HOMEACTIVITY = 1;
 	private TextView tv;
 	private int localVersionNum;
 	protected String mVersionDes;
@@ -51,11 +61,64 @@ public class SplashActivity extends Activity {
 		
 		
 	}
+	//主线程处理消息
+	Handler handler =new Handler(){
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case OPEN_WINDOWS:
+				//弹出升级对话框
+				showUpdateDialog();
+				break;
+			case ENTRY_HOMEACTIVITY:
+				//进入主页
+				enteyHomeActivity();	
+				ToastUtil.show(SplashActivity.this, "进入主页");
+				break;
+
+			default:
+				enteyHomeActivity();	
+				break;
+			}
+		};
+	};
+	protected Message message;
+	
 	/**
 	 * 获取版本号空间
 	 */
 	private void initUI() {
 		tv = (TextView)findViewById(R.id.tv_version_name);
+		
+	}
+	
+	protected void showUpdateDialog() {
+		Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("是否升级？");
+		builder.setPositiveButton("立即更新"	, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				enteyHomeActivity();
+				
+			}
+		});
+		
+		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				enteyHomeActivity();
+				
+			}
+		});
+		builder.show();
+	}
+	//进入主页
+	protected void enteyHomeActivity() {
+		Intent intent = new Intent(this, HomeActivity.class);
+		startActivity(intent);
+		//关闭上一层活动
+		finish();
 		
 	}
 
@@ -101,8 +164,9 @@ public class SplashActivity extends Activity {
 		new Thread(){
 
 			public  void run(){
+				 message = Message.obtain();
 				try {
-					URL url = new URL("http://192.168.1.6:8080/json.json");
+					/*URL url = new URL("http://192.168.1.6:8080/json.json");
 					HttpURLConnection connection = (HttpURLConnection)url.openConnection();
 					connection.setConnectTimeout(2000);
 					connection.setReadTimeout(2000);
@@ -119,18 +183,29 @@ public class SplashActivity extends Activity {
 						//debug调试,解决问题
 						String versionName = jsonObject.getString("versionName");
 						mVersionDes = jsonObject.getString("versionDes");
-						String versionCode = jsonObject.getString("versionCode");
+						String versionCode = "5"jsonObject.getString("versionCode");
 						mDownloadUrl = jsonObject.getString("downloadUrl");
 
 						//日志打印	
 						Log.i(tag, versionName);
 						Log.i(tag, mVersionDes);
 						Log.i(tag, versionCode);
-						Log.i(tag, mDownloadUrl);
-						
-					}
+						Log.i(tag, mDownloadUrl);*/
+						//8 比对版本号
+						if(localVersionNum<Integer.parseInt("2")){
+							//弹出更新提示框
+							message.what=OPEN_WINDOWS;
+						}else{
+							//进入主界面
+							message.what=ENTRY_HOMEACTIVITY;
+						}
+//					}
 				} catch (Exception e) {
 					e.printStackTrace();
+					
+					
+				}finally{
+					handler.sendMessage(message);
 				}
 			}
 		}.start();
