@@ -4,5 +4,39 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+<TextView android:text="功能列表"
+   style="@style/TitileStyle" />
 
+<!-- <TextView 
+    android:text="风潇潇兮易水寒，壮士一去兮不复还，风潇潇兮易水寒，壮士一去兮不复还，"
+    android:singleLine="true"
+    android:textSize="12sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:marqueeRepeatLimit="marquee_forever"
+    />
+ -->
+<com.example.mobilesafe.view.FocusTextView
+     android:text="风潇潇兮易水寒，壮士一去兮不复还，风潇潇兮易水寒，壮士一去兮不复还，"
+    android:singleLine="true"
+    android:textSize="12sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:marqueeRepeatLimit="marquee_forever">
+    
+</com.example.mobilesafe.view.FocusTextView>
+
+
+
+<GridView 
+    android:id="@+id/gv_home"
+    android:verticalSpacing="10dp"
+    android:numColumns="3"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    ></GridView>
 </LinearLayout>

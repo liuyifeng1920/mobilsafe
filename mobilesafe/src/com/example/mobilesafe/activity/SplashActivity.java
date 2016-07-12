@@ -27,10 +27,13 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings.System;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,7 +54,7 @@ public class SplashActivity extends Activity {
 	private int localVersionNum;
 	protected String mVersionDes;
 	protected String mDownloadUrl;
-
+	private RelativeLayout rl_root;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,7 +62,18 @@ public class SplashActivity extends Activity {
 		initUI();
 		initDate();
 		
+		//渐变动画小说
+		initAnimation();
 		
+	}
+	
+	/**
+	 * 动画渐变效果到home页
+	 */
+	private void initAnimation() {
+		AlphaAnimation alphaAnimation =new AlphaAnimation(0, 1);
+		alphaAnimation.setDuration(5000);//设置时间
+		rl_root.startAnimation(alphaAnimation);
 	}
 	//主线程处理消息
 	Handler handler =new Handler(){
@@ -88,7 +102,7 @@ public class SplashActivity extends Activity {
 	 */
 	private void initUI() {
 		tv = (TextView)findViewById(R.id.tv_version_name);
-		
+		rl_root = (RelativeLayout) findViewById(R.id.rl_root);
 	}
 	
 	protected void showUpdateDialog() {
@@ -162,8 +176,9 @@ public class SplashActivity extends Activity {
 	private void checkUpdate() {
 		//更新必须在子线程中进行
 		new Thread(){
-
+			
 			public  void run(){
+				long startUpdataTime = java.lang.System.currentTimeMillis();
 				 message = Message.obtain();
 				try {
 					/*URL url = new URL("http://192.168.1.6:8080/json.json");
@@ -205,6 +220,15 @@ public class SplashActivity extends Activity {
 					
 					
 				}finally{
+					
+					if(startUpdataTime-java.lang.System.currentTimeMillis()<4000){
+						try {
+							Thread.sleep(4000-(startUpdataTime-java.lang.System.currentTimeMillis()));
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
 					handler.sendMessage(message);
 				}
 			}
