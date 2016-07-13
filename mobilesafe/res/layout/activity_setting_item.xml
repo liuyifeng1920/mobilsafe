@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
     
-<TextView 
-   style="@style/TitileStyle"
-   android:text="设置中心"
-    />
-
-<com.example.mobilesafe.activity.SettingItemActivity
-     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    ></com.example.mobilesafe.activity.SettingItemActivity>
-
-<com.example.mobilesafe.activity.SettingItemActivity
-     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    ></com.example.mobilesafe.activity.SettingItemActivity>
-
-
-<!-- <RelativeLayout 
+<RelativeLayout 
     android:padding="5dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -44,6 +27,7 @@
         />
     
     <CheckBox 
+        android:id="@+id/cb_setting_is"
         android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -58,5 +42,5 @@
        android:layout_marginTop="5dp"
        />
 
-</RelativeLayout> -->
-</LinearLayout>
+</RelativeLayout>
+</RelativeLayout>
