@@ -9,6 +9,30 @@ package com.example.mobilesafe;
 
 public final class R {
     public static final class attr {
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int desoff=0x7f010001;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int deson=0x7f010002;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int destitle=0x7f010000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -89,4 +113,65 @@ public final class R {
         public static final int AppTheme=0x7f060001;
         public static final int TitileStyle=0x7f060002;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a com_example_mobilesafe_activity_SettingItemActivity.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #com_example_mobilesafe_activity_SettingItemActivity_desoff com.example.mobilesafe:desoff}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_example_mobilesafe_activity_SettingItemActivity_deson com.example.mobilesafe:deson}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_example_mobilesafe_activity_SettingItemActivity_destitle com.example.mobilesafe:destitle}</code></td><td></td></tr>
+           </table>
+           @see #com_example_mobilesafe_activity_SettingItemActivity_desoff
+           @see #com_example_mobilesafe_activity_SettingItemActivity_deson
+           @see #com_example_mobilesafe_activity_SettingItemActivity_destitle
+         */
+        public static final int[] com_example_mobilesafe_activity_SettingItemActivity = {
+            0x7f010000, 0x7f010001, 0x7f010002
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.mobilesafe.R.attr#desoff}
+          attribute's value can be found in the {@link #com_example_mobilesafe_activity_SettingItemActivity} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.mobilesafe:desoff
+        */
+        public static final int com_example_mobilesafe_activity_SettingItemActivity_desoff = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.example.mobilesafe.R.attr#deson}
+          attribute's value can be found in the {@link #com_example_mobilesafe_activity_SettingItemActivity} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.mobilesafe:deson
+        */
+        public static final int com_example_mobilesafe_activity_SettingItemActivity_deson = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.example.mobilesafe.R.attr#destitle}
+          attribute's value can be found in the {@link #com_example_mobilesafe_activity_SettingItemActivity} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.mobilesafe:destitle
+        */
+        public static final int com_example_mobilesafe_activity_SettingItemActivity_destitle = 0;
+    };
 }

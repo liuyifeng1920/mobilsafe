@@ -13,14 +13,12 @@
         android:id="@+id/tv_setting_title"
         android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
-    	android:text="自动更新设置"
     	android:textSize="18sp"
         />
     <TextView 
         android:id="@+id/tv_setting_desc"
         android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
-    	android:text="自动更新已关闭"
     	android:textSize="18sp"
     	android:layout_below="@id/tv_setting_title"
     	android:layout_marginTop="5dp"
