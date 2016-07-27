@@ -27,6 +27,9 @@
         
         <activity android:name="com.example.mobilesafe.activity.HomeActivity"></activity>
          <activity android:name="com.example.mobilesafe.activity.SettingActivity"></activity>
+         <activity android:name="com.example.mobilesafe.activity.FangdaoActivity"></activity>
+         <activity android:name="com.example.mobilesafe.activity.FangdaoSetUp1Activity"></activity>
+          <activity android:name="com.example.mobilesafe.activity.FangdaoSetUp2Activity"></activity>
     </application>
 
 </manifest>

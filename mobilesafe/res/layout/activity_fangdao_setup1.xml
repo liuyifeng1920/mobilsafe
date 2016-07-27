@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <TextView 
+        android:text="欢迎使用手机防盗"
+		style="@style/TitileStyle"      
+        />
+    <TextView android:text="您的手机防盗卫视："
+        android:layout_width="wrap_content"
+   		 android:layout_height="wrap_content"
+   		 android:textSize="18sp"
+        />
+     <TextView 
+         android:text="sim卡变更报警"
+        style="@style/FangDaoStyle"
+        />
+     <TextView 
+         android:text="GPS追踪"
+        style="@style/FangDaoStyle"
+        />
+     <TextView 
+         android:text="远程数据销毁"
+        style="@style/FangDaoStyle"
+        />
+     <TextView 
+         android:text="远程锁屏"
+        style="@style/FangDaoStyle"
+        />
+     
+     <LinearLayout 
+         android:gravity="center"
+          android:layout_width="match_parent"
+   		 android:layout_height="wrap_content"
+   		 
+         >
+         <ImageView 
+               android:layout_width="wrap_content"
+   		 android:layout_height="wrap_content"
+   		 android:background="@android:drawable/btn_star_big_on"
+             />
+          <ImageView 
+               android:layout_width="wrap_content"
+   			   android:layout_height="wrap_content"
+   		       android:background="@android:drawable/btn_star_big_off"
+             />
+          <ImageView 
+               android:layout_width="wrap_content"
+   			   android:layout_height="wrap_content"
+   		       android:background="@android:drawable/btn_star_big_off"
+             />
+           <ImageView 
+               android:layout_width="wrap_content"
+   			   android:layout_height="wrap_content"
+   		       android:background="@android:drawable/btn_star_big_off"
+             />
+     </LinearLayout>
+     
+     <RelativeLayout 
+           android:layout_width="match_parent"
+   		   android:layout_height="match_parent"
+         >
+         
+         <ImageView 
+             android:background="@drawable/setup1"
+               android:layout_width="wrap_content"
+   			   android:layout_height="wrap_content"
+   			   android:layout_centerInParent="true"
+             />
+         
+         <Button 
+            style="@style/NextBut"
+             />
+     </RelativeLayout>
+</LinearLayout>
