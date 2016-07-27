@@ -30,6 +30,8 @@
          <activity android:name="com.example.mobilesafe.activity.FangdaoActivity"></activity>
          <activity android:name="com.example.mobilesafe.activity.FangdaoSetUp1Activity"></activity>
           <activity android:name="com.example.mobilesafe.activity.FangdaoSetUp2Activity"></activity>
+            <activity android:name="com.example.mobilesafe.activity.FangdaoSetUp3Activity"></activity>
+              <activity android:name="com.example.mobilesafe.activity.FangdaoSetUp4Activity"></activity>
     </application>
 
 </manifest>

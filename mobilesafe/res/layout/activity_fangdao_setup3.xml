@@ -6,28 +6,28 @@
 
     <TextView
         style="@style/TitileStyle"
-        android:text="2 手机卡绑定22" />
+        android:text="3 设置安全码" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="通过绑定SIM卡：\n下次重启手机如果发现SIM卡发生变化就会发送报警短信"
+        android:text="通SIM卡变更后：\n报警短信会发送安全手机"
          android:textColor="#000"
 	    android:textSize="18sp"
 	    android:layout_margin="5dp" />
 
-   <!-- 自定义组合控件 -->
-	<com.example.mobilesafe.activity.SettingItemActivity 
-	   	xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
-	    android:id="@+id/siv_sim_bound"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    mobilesafe:destitle="点击绑定sim卡"
-	    mobilesafe:desoff="sim卡未绑定"
-	    mobilesafe:deson="sim卡已绑定">
-	</com.example.mobilesafe.activity.SettingItemActivity>
-
-   
+  <EditText 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ET_phone_security_num"
+      />
+   <Button 
+       android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择联系人"
+        android:background="@drawable/select_phone_security_btn_bg"
+          android:id="@+id/bt_select_number"
+       />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,15 +38,16 @@
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_star_big_off" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_star_big_on" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_star_big_off" />
+           <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_star_big_on" />
+        
 
         <ImageView
             android:layout_width="wrap_content"

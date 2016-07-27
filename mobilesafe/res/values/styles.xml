@@ -62,7 +62,7 @@
     </style>
       <style name="LastBut">
         <item name="android:text">上一页</item>
-         <item name="android:onClick">nexBut</item>
+         <item name="android:onClick">lastBut</item>
             <item name="android:drawableLeft">@drawable/next</item>
              <item name="android:layout_alignParentBottom">true</item>
               <item name="android:layout_alignParentLeft">true</item>
