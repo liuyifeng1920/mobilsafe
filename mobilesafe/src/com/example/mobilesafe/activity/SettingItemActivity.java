@@ -52,10 +52,10 @@ private void initAttrs(AttributeSet attrs) {
 		boolean checked = cb_setting_is.isChecked();
 		if(checked){
 			cb_setting_is.setChecked(!checked);
-			setting_desc.setText("自动更新已关闭");
+			setting_desc.setText(mDesoff);
 		}else{
 			cb_setting_is.setChecked(!checked);
-			setting_desc.setText("自动更新已开启");
+			setting_desc.setText(mDeson);
 		}
 		SpUtil.addBoolean(getContext(), ContansValue.OPEN_UPDATE, !checked);
 	}
@@ -63,11 +63,14 @@ private void initAttrs(AttributeSet attrs) {
 	public void isCheck(Boolean boolean1){
 		if(boolean1){
 			cb_setting_is.setChecked(boolean1);
-			setting_desc.setText("自动更新已开启");
+			setting_desc.setText(mDeson);
 			
 		}else{
 			cb_setting_is.setChecked(boolean1);
-			setting_desc.setText("自动更新已关闭");
+			setting_desc.setText(mDesoff);
 		}
 	}
+public Boolean getCheckState(){
+	return cb_setting_is.isChecked();
+}
 }

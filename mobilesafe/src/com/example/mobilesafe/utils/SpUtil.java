@@ -34,4 +34,11 @@ public class SpUtil {
 		}
 		return sharedPreferences.getString(key, defBoolean);
 	}
+
+	public static void remove(Context context,String key) {
+		if(sharedPreferences==null){
+			sharedPreferences=context.getSharedPreferences("config", Context.MODE_PRIVATE);
+		}
+		sharedPreferences.edit().remove(key).commit();
+	}
 }
