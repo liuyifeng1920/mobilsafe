@@ -8,6 +8,7 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 import com.example.mobilesafe.R;
 import com.example.mobilesafe.utils.ContansValue;
@@ -56,9 +57,15 @@ private void intiUI() {
  *  点击下一页按钮
  */
 public void nexBut(View view){
-	Intent intent =new Intent(getApplicationContext(), FangdaoSetUp3Activity.class);
-	startActivity(intent);
-	finish();
+	String sim_num = SpUtil.getString(getApplicationContext(), ContansValue.SIM_NUM, "");
+	if(!TextUtils.isEmpty(sim_num)){
+		Intent intent =new Intent(getApplicationContext(), FangdaoSetUp3Activity.class);
+		startActivity(intent);
+		finish();
+	}else{
+		Toast.makeText(getApplicationContext(), "请绑定sim卡", Toast.LENGTH_SHORT).show();
+	}
+	
 }
 
 public void lastBut(View view){
